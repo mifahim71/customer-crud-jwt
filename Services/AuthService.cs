@@ -42,6 +42,7 @@ namespace CustomerCrudApi.Services
             Customer.FirstName = requestDto.FirstName;
             Customer.Email = requestDto.Email;
             Customer.Address = requestDto.Address;
+            Customer.Role = requestDto.Role;
 
             _context.Customers.Add(Customer);
             await _context.SaveChangesAsync();
@@ -51,7 +52,8 @@ namespace CustomerCrudApi.Services
                 Id = Customer.Id,
                 Name = Customer.FirstName,
                 Email = Customer.Email,
-                Address = Customer.Address
+                Address = Customer.Address,
+                Role = Customer.Role.ToString()
             };
         }
     }

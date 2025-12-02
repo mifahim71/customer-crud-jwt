@@ -127,3 +127,4 @@ C:\Users\user\OneDrive\Desktop\C#\CustomerCrudApi\CustomerCrudApi\bin\Debug\net1
 C:\Users\user\OneDrive\Desktop\C#\CustomerCrudApi\CustomerCrudApi\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\user\OneDrive\Desktop\C#\CustomerCrudApi\CustomerCrudApi\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\user\OneDrive\Desktop\C#\CustomerCrudApi\CustomerCrudApi\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\user\OneDrive\Desktop\C#\CustomerCrudApi\CustomerCrudApi\obj\Debug\net10.0\CustomerCrudApi.sourcelink.json

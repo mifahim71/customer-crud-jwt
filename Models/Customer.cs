@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CustomerCrudApi.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CustomerCrudApi.Models
@@ -23,6 +24,7 @@ namespace CustomerCrudApi.Models
         [Required]
         public string? HashPassword { get; set; }
 
-
+        [Required]
+        public CustomerRole Role { get; set; }
     }
 }

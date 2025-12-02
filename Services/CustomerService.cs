@@ -22,7 +22,8 @@ namespace CustomerCrudApi.Services
                     Id = c.Id,
                     Name = c.FirstName,
                     Email = c.Email,
-                    Address = c.Address
+                    Address = c.Address,
+                    Role = c.Role.ToString()
                 })
                 .ToListAsync();
         }
@@ -41,7 +42,8 @@ namespace CustomerCrudApi.Services
                 Id = Customer.Id,
                 Name = Customer.FirstName,
                 Email = Customer.Email,
-                Address = Customer.Address
+                Address = Customer.Address,
+                Role = Customer.Role.ToString()
             };
         }
 

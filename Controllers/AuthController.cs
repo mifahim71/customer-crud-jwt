@@ -13,11 +13,13 @@ namespace CustomerCrudApi.Controllers
     {
         private readonly IAuthService _authService;
         private readonly IJwtService _jwtService;
+        private readonly ICustomerService _customerService;
 
-        public AuthController(IAuthService authService, IJwtService jwtService)
+        public AuthController(IAuthService authService, IJwtService jwtService, ICustomerService customerService)
         {
             _authService = authService;
             _jwtService = jwtService;
+            _customerService = customerService;
         }
 
         [HttpPost("register")]
@@ -53,10 +55,17 @@ namespace CustomerCrudApi.Controllers
                 return Unauthorized();
             }
 
+            var customerResponseDto = await _customerService.GetCustomerByEmailAsync(loginRequestDto.Email!);
+
+            if (customerResponseDto == null)
+            {
+                return Unauthorized();
+            }
+
             var jwtToken = _jwtService.GenerateToken(new[]
                 {
                     new Claim(ClaimTypes.Name, loginRequestDto.Email!),
-                    new Claim(ClaimTypes.Role, "USER")
+                    new Claim(ClaimTypes.Role, customerResponseDto.Role!)
                 });
 
 

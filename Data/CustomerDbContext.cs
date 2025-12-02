@@ -15,6 +15,10 @@ namespace CustomerCrudApi.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>().HasIndex(c => c.Email).IsUnique();
+
+            modelBuilder.Entity<Customer>()
+                .Property(c => c.Role)
+                .HasConversion<string>();
         }
     }
 }

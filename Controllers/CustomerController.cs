@@ -36,7 +36,7 @@ namespace CustomerCrudApi.Controllers
             return Ok(response);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "ADMIN")]
         [HttpGet("all")]
         public async Task<ActionResult<List<CustomerResponseDto>>> GetAllCustomers()
         {
